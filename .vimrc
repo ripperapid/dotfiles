@@ -118,7 +118,7 @@ set cursorline    " Highligt line under cursor
 set t_ut=         " Fix corrupt background in tmux
 set encoding=utf-8
 set mouse=a
-colorscheme neverland-mine
+colorscheme neverland
 
 " Popup menu configuration
 highlight PmenuSel guibg=brown
