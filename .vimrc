@@ -1,16 +1,3 @@
-" Vundle
-set nocompatible
-filetype off
-if has("win32")
-    set rtp+=$HOME/Vim/bundle/vundle/
-    let path='$HOME/Vim/bundle'
-    call vundle#begin(path)
-    set directory=.,$TEMP
-else
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-endif
-
 " Airline config (Must be set before loading plugin)
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -30,7 +17,22 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#buffer_min_count = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" Vundle
+" ===========================================================================
+set nocompatible
+filetype off
+if has("win32")
+    set rtp+=$HOME/Vim/bundle/Vundle.vim/
+    let path='$HOME/Vim/bundle'
+    call vundle#begin(path)
+    set directory=.,$TEMP
+else
+    set rtp+=~/.vim/bundle/Vundle.vim/
+    call vundle#begin()
+endif
+
 " Vundle plugins
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'embear/vim-localvimrc'
@@ -104,12 +106,11 @@ else
     Plugin 'scrooloose/syntastic'
 endif
 
-call vundle#config#require(g:bundles)
-
-set secure
+call vundle#end()
 
 " Interface settings
 " ===========================================================================
+set secure
 
 set t_Co=256      " Enable 256-color mode
 set guioptions=i  " Use vim icon in gui
