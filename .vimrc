@@ -42,7 +42,6 @@ Plugin 'python_match.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'ciaranm/detectindent'
 Plugin 'a.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -94,16 +93,26 @@ Plugin 'c.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'unblevable/quick-scope'
 
-" OS dependent Vundle plugins
+" Version dependent plugins
+if v:version >= 704
+    Plugin 'SirVer/ultisnips'
+endif
+
+" OS dependent plugins
 if has("X11")
     Plugin 'osyo-manga/vim-marching'
-    Plugin 'Valloric/YouCompleteMe'
     Plugin 'rking/ag.vim'
     Plugin 'scrooloose/syntastic'
 else
-    Plugin 'davidhalter/jedi-vim'
     Plugin 'runsisi/consolas-font-for-powerline'
     Plugin 'scrooloose/syntastic'
+endif
+
+" Multiple dependencies
+if v:version >= 704 && has("X11")
+    Plugin 'Valloric/YouCompleteMe'
+else
+    Plugin 'davidhalter/jedi-vim'
 endif
 
 call vundle#end()
