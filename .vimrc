@@ -60,6 +60,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
@@ -386,17 +387,20 @@ let g:AutoPairsMapCR = 0
 " Better color for matching parenthesis
 au BufRead * hi MatchParen ctermbg=none ctermfg=yellow
 
+" NERDTree
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeAutoCenter = 1
 " Auto refresh NERDTree
-function! rc:isNTOpen()        
+function! IsNTOpen()        
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
-func! rc:NERDTreeRefresh()
-    if &modifiable && rc:isNTOpen() && strlen(expand('%')) > 0 && !&diff
-        exec "NERDTreeFind"
-        exec "wincmd p"
+func! NERDTreeRefresh()
+    if &modifiable && IsNTOpen() && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
     endif
 endfunc
-au BufEnter *.* call rc:NERDTreeRefresh()
+au BufEnter *.* call NERDTreeRefresh()
 
 " Quickscope hack
 let g:qs_enable = 0
