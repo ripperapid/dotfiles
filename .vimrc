@@ -42,7 +42,7 @@ Plugin 'python_match.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'ciaranm/detectindent'
 Plugin 'a.vim'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'Lokaltog/powerline-fonts'
@@ -87,17 +87,14 @@ Plugin 'DoxygenToolkit.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'ap/vim-css-color'
 Plugin 'terryma/vim-expand-region'
-Plugin 'ervandew/supertab'
 Plugin 'wikitopian/hardmode'
 Plugin 'BufOnly.vim'
 Plugin 'c.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'unblevable/quick-scope'
-
-" Version dependent plugins
-if v:version >= 704
-    Plugin 'SirVer/ultisnips'
-endif
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 " OS dependent plugins
 if has("X11")
@@ -107,13 +104,6 @@ if has("X11")
 else
     Plugin 'runsisi/consolas-font-for-powerline'
     Plugin 'scrooloose/syntastic'
-endif
-
-" Multiple dependencies
-if v:version >= 704 && has("X11")
-    Plugin 'Valloric/YouCompleteMe'
-else
-    Plugin 'davidhalter/jedi-vim'
 endif
 
 call vundle#end()
@@ -338,24 +328,25 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_always_populate_location_list = 1
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+" TAB-completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ neocomplete#start_manual_complete()
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
+            \ <SID>check_back_space() ? "\<S-TAB>" :
+            \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Speed up easytags
 let g:easytags_syntax_keyword = 'always'
-
 
 " Latexbox config
 au FileType tex nnoremap <buffer> <leader><F3> :LatexTOCToggle<CR>
