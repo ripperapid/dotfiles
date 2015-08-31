@@ -89,7 +89,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'terryma/vim-expand-region'
 Plugin 'wikitopian/hardmode'
 Plugin 'BufOnly.vim'
-Plugin 'c.vim'
+"Plugin 'c.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'unblevable/quick-scope'
 Plugin 'Shougo/neocomplete.vim'
@@ -382,7 +382,7 @@ au BufRead * hi MatchParen ctermbg=none ctermfg=yellow
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoCenter = 1
 " Auto refresh NERDTree
-function! IsNTOpen()        
+function! IsNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 func! NERDTreeRefresh()
