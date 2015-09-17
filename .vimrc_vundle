@@ -52,7 +52,7 @@ Plugin 'bufkill.vim'
 Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'xolox/vim-colorscheme-switcher'
+"Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'gregsexton/VimCalc'
 Plugin 'joonty/vdebug.git'
 Plugin 'jaredly/vim-debug'
@@ -72,9 +72,9 @@ Plugin 'vim-scripts/gtk-vim-syntax'
 Plugin 'xolox/vim-misc'
 Plugin 'yggdroot/indentline'
 "Plugin 'wesleyche/SrcExpl'
-Plugin 'godlygeek/csapprox'
+"Plugin 'godlygeek/csapprox'
 Plugin 'klen/python-mode'
-Plugin 'felixhummel/setcolors.vim'
+"Plugin 'felixhummel/setcolors.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'vim-scripts/IndentConsistencyCop'
 Plugin 'vim-scripts/ingo-library'
@@ -95,16 +95,17 @@ Plugin 'unblevable/quick-scope'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-"Plugin 'chikamichi/mediawiki.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'chikamichi/mediawiki.vim'
+Plugin 'regedarek/ZoomWin'
+Plugin 'will133/vim-dirdiff'
 
 " OS dependent plugins
-if has("X11")
+if has("unix")
     Plugin 'osyo-manga/vim-marching'
     Plugin 'rking/ag.vim'
-    Plugin 'scrooloose/syntastic'
 else
     Plugin 'runsisi/consolas-font-for-powerline'
-    Plugin 'scrooloose/syntastic'
 endif
 
 call vundle#end()
@@ -125,7 +126,6 @@ colorscheme neverland
 
 "Latex
 let g:tex_flavor='latex'
-
 
 
 " Key bindings
@@ -231,6 +231,8 @@ endfunction"}}}
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+" Fix <c-y> in insert mode
+inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
 
 " Speed up easytags
 let g:easytags_syntax_keyword = 'always'
