@@ -99,6 +99,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'chikamichi/mediawiki.vim'
 Plugin 'regedarek/ZoomWin'
 Plugin 'will133/vim-dirdiff'
+Plugin 'kergoth/vim-bitbake'
 
 " OS dependent plugins
 if has("unix")
