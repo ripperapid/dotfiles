@@ -77,7 +77,8 @@ map <space>        <leader>
 map <space><space> <leader><leader>
 
 " Other mappings
-nmap <C-g>         :bnext<CR>
+nmap <F6>          :bp<CR>
+nmap <F7>          :bn<CR>
 nmap <C-tab>       <ESC> :b#<cr>
 nmap <F4>          :copen<CR>
 nmap <F12>         :nohlsearch<CR>
