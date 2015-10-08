@@ -110,11 +110,14 @@ map <leader>gp ])
 map <leader>gM [m
 map <leader>gm ]m
 
+" Tag movements
+nmap <leader>gt g]
+
 " Window movements
-map <C-h>     <C-W>h
-map <C-j>     <C-W>j
-map <C-k>     <C-W>k
-map <C-l>     <C-W>l
+nmap <C-h>     <C-W>h
+nmap <C-j>     <C-W>j
+nmap <C-k>     <C-W>k
+nmap <C-l>     <C-W>l
 
 " Disable arrow keys (habit breaking)
 noremap <Up> <NOP>
