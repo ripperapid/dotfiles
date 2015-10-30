@@ -100,6 +100,8 @@ Plugin 'chikamichi/mediawiki.vim'
 Plugin 'regedarek/ZoomWin'
 Plugin 'will133/vim-dirdiff'
 Plugin 'kergoth/vim-bitbake'
+Plugin 'vcscommand.vim'
+Plugin 'mhinz/vim-signify'
 
 " OS dependent plugins
 if has("unix")
@@ -124,6 +126,9 @@ else
 endif
 
 colorscheme neverland
+
+" Reset colors before exiting (Needed when using screen)
+au VimLeave * !echo -ne "\033[0m"
 
 "Latex
 let g:tex_flavor='latex'

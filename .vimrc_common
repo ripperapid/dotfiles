@@ -125,8 +125,3 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" Reset colors when exiting
-if match($TERM, "screen")!=-1
-    au VimLeave * !reset
-endif"
