@@ -92,14 +92,13 @@ Plugin 'BufOnly.vim'
 "Plugin 'c.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'unblevable/quick-scope'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/syntastic'
 Plugin 'chikamichi/mediawiki.vim'
 Plugin 'regedarek/ZoomWin'
 Plugin 'will133/vim-dirdiff'
 Plugin 'kergoth/vim-bitbake'
+Plugin 'vcscommand.vim'
+Plugin 'mhinz/vim-signify'
 
 " OS dependent plugins
 if has("unix")
@@ -107,6 +106,13 @@ if has("unix")
     Plugin 'rking/ag.vim'
 else
     Plugin 'runsisi/consolas-font-for-powerline'
+endif
+
+" Check NeoComplete dependencies
+if exists('+lua') && (v:version >= 703885)
+    Plugin 'Shougo/neocomplete.vim'
+    Plugin 'Shougo/neosnippet'
+    Plugin 'Shougo/neosnippet-snippets'
 endif
 
 call vundle#end()
@@ -124,6 +130,9 @@ else
 endif
 
 colorscheme neverland
+
+" Reset colors before exiting (Needed when using screen)
+au VimLeave * !echo -ne "\033[0m"
 
 "Latex
 let g:tex_flavor='latex'
