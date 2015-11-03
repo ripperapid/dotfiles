@@ -134,7 +134,7 @@ let g:tex_flavor='latex'
 
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
-nmap <F8>          :call Compile()
+nmap <F8>          :Compile
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
 nmap <leader>b     :CtrlPBuffer<CR>
@@ -184,6 +184,7 @@ func! Compile()
     exec "w"
     exec "!gcc % -o %<"
 endfunc
+command! Compile call Compile()
 func! SudoWrite()
     exec "w !sudo tee % > /dev/null"
 endfunc
@@ -257,7 +258,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 set grepprg=grep\ -nH\ $*
 
 " Set normal make (If changed by lvimrc)
-set makeprg=make!
+"set makeprg=make!
 
 " Taglist
 let Tlist_Use_Right_Window = 1
