@@ -68,7 +68,7 @@ Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/gtk-vim-syntax'
 "Plugin 'basilgor/vim-autotags'
-"Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'yggdroot/indentline'
 "Plugin 'wesleyche/SrcExpl'
@@ -242,6 +242,9 @@ inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
 
 " Speed up easytags
 let g:easytags_syntax_keyword = 'always'
+
+" Speed up TagBar
+set updatetime=1000
 
 " Latexbox config
 au FileType tex nnoremap <buffer> <leader><F3> :LatexTOCToggle<CR>
