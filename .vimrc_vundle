@@ -126,7 +126,8 @@ if has("win32")
 else
     "set guifont=Monospace\ 9
     "set guifont=Consolas\ 8
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+    "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+    set guifont=Liberation\ Mono\ for\ Powerline\ 11
 endif
 
 colorscheme neverland
