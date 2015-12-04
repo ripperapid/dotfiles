@@ -67,8 +67,11 @@ Plugin 'gregsexton/gitv'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/gtk-vim-syntax'
+"Plugin 'brookhong/cscope.vim'
 "Plugin 'basilgor/vim-autotags'
-Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-easytags'
+"Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'gtags.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'yggdroot/indentline'
 "Plugin 'wesleyche/SrcExpl'
@@ -99,6 +102,9 @@ Plugin 'will133/vim-dirdiff'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'vcscommand.vim'
 Plugin 'mhinz/vim-signify'
+Plugin 'tracwiki'
+Plugin 'log.vim'
+Plugin 'searchfold.vim'
 
 " OS dependent plugins
 if has("unix")
@@ -160,6 +166,11 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Remap to use gtags if installed 
+if executable("gtags")
+    nmap <leader>gt :GtagsCursor<CR>]
+endif
 
 
 " Autocommands
@@ -247,7 +258,8 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
 
 " Speed up easytags
-let g:easytags_syntax_keyword = 'always'
+"let g:easytags_syntax_keyword = 'always'
+"let g:gutentags_modules = ['ctags', 'cscope']
 
 " Speed up TagBar
 set updatetime=1000
@@ -285,6 +297,7 @@ au BufRead * hi MatchParen ctermbg=none ctermfg=yellow
 " NERDTree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoCenter = 1
+let g:NERDTreeHijackNetrw = 0
 " Auto refresh NERDTree
 function! IsNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
