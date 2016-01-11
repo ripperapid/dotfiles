@@ -34,7 +34,9 @@ endif
 " Vundle plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-unimpaired'
+"Plugin 'tpope/vim-unimpaired'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'embear/vim-localvimrc'
 Plugin 'matchit.zip'
 Plugin 'Valloric/MatchTagAlways'
@@ -123,6 +125,12 @@ elseif executable("cscope")
     Plugin 'brookhong/cscope.vim'
 else
     Plugin 'ludovicchabant/vim-gutentags'
+endif
+
+" NeoVim specific plugins
+if has('nvim')
+    Plugin 'benekastah/neomake'
+    Plugin 'Shougo/deoplete.nvim'
 endif
 
 call vundle#end()
