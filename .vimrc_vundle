@@ -175,6 +175,9 @@ nmap ga <Plug>(EasyAlign)
 if executable("gtags")
     nmap <leader>gt :GtagsCursor<CR>]
 elseif executable("cscope")
+    " Minimum key mappings
+    nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+    nnoremap <leader>l :call ToggleLocationList()<CR>
     " s: Find this C symbol
     nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
     " g: Find this definition
