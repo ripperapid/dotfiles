@@ -91,7 +91,6 @@ Plugin 'wikitopian/hardmode'
 Plugin 'BufOnly.vim'
 "Plugin 'c.vim'
 Plugin 'tpope/vim-dispatch'
-Plugin 'unblevable/quick-scope'
 Plugin 'scrooloose/syntastic'
 Plugin 'chikamichi/mediawiki.vim'
 Plugin 'regedarek/ZoomWin'
@@ -183,6 +182,9 @@ nmap ga <Plug>(EasyAlign)
 if executable("gtags")
     nmap <leader>gt :GtagsCursor<CR>]
 elseif executable("cscope")
+    " Minimum key mappings
+    nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+    nnoremap <leader>l :call ToggleLocationList()<CR>
     " s: Find this C symbol
     nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
     " g: Find this definition
@@ -263,6 +265,7 @@ let g:pymode_rope = 0
 
 " Syntastic config
 let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
+let g:syntastic_mode_map = {"mode": "passive"}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -338,23 +341,3 @@ func! NERDTreeRefresh()
     endif
 endfunc
 au BufEnter *.* call NERDTreeRefresh()
-
-" Quickscope hack
-let g:qs_enable = 0
-let g:qs_enable_char_list = [ 'f', 'F', 't', 'T' ]
-function! Quick_scope_selective(movement)
-    let needs_disabling = 0
-    if !g:qs_enable
-        QuickScopeToggle
-        redraw
-        let needs_disabling = 1
-    endif
-    let letter = nr2char(getchar())
-    if needs_disabling
-        QuickScopeToggle
-    endif
-    return a:movement . letter
-endfunction
-for i in g:qs_enable_char_list
-	execute 'noremap <expr> <silent>' . i . " Quick_scope_selective('". i . "')"
-endfor
