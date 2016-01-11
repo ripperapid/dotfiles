@@ -1,0 +1,107 @@
+if has("win32")
+    call plug#begin('$HOME/Vim/bundle')
+    set directory=.,$TEMP
+else
+    call plug#begin('~/.vim/bundle')
+endif
+
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'tpope/vim-unimpaired'
+Plug 'jiangmiao/auto-pairs'
+Plug 'amirh/HTML-AutoCloseTag'
+Plug 'embear/vim-localvimrc'
+Plug 'matchit.zip'
+Plug 'Valloric/MatchTagAlways'
+Plug 'python_match.vim'
+Plug 'tpope/vim-surround'
+Plug 'ciaranm/detectindent'
+Plug 'a.vim'
+"Plug 'honza/vim-snippets'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'Lokaltog/powerline-fonts'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'junegunn/vim-easy-align'
+Plug 'bufkill.vim'
+Plug 'bling/vim-airline'
+Plug 'chrisbra/csv.vim'
+Plug 'flazz/vim-colorschemes'
+"Plug 'xolox/vim-colorscheme-switcher'
+Plug 'gregsexton/VimCalc'
+Plug 'joonty/vdebug.git'
+Plug 'jaredly/vim-debug'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'gregsexton/gitv'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'vim-scripts/gtk-vim-syntax'
+Plug 'xolox/vim-misc'
+Plug 'yggdroot/indentline'
+"Plug 'wesleyche/SrcExpl'
+"Plug 'godlygeek/csapprox'
+Plug 'klen/python-mode'
+"Plug 'felixhummel/setcolors.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'vim-scripts/IndentConsistencyCop'
+Plug 'vim-scripts/ingo-library'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'TaskList.vim'
+"Plug 'AsciiTable.vim'
+Plug 'CharTab'
+Plug 'tpope/vim-repeat'
+Plug 'DoxygenToolkit.vim'
+"Plug 'severin-lemaignan/vim-minimap'
+Plug 'ap/vim-css-color'
+Plug 'terryma/vim-expand-region'
+Plug 'wikitopian/hardmode'
+Plug 'BufOnly.vim'
+"Plug 'c.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'scrooloose/syntastic'
+Plug 'chikamichi/mediawiki.vim'
+Plug 'regedarek/ZoomWin'
+Plug 'will133/vim-dirdiff'
+Plug 'kergoth/vim-bitbake'
+Plug 'vcscommand.vim'
+Plug 'mhinz/vim-signify'
+Plug 'tracwiki'
+Plug 'log.vim'
+Plug 'searchfold.vim'
+
+" OS dependent plugins
+if has("unix")
+    Plug 'osyo-manga/vim-marching'
+    Plug 'rking/ag.vim'
+else
+    Plug 'runsisi/consolas-font-for-powerline'
+endif
+
+" Check NeoComplete dependencies
+if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
+    Plug 'Shougo/neocomplete.vim'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+endif
+
+" Tag plugins
+if executable("gtags")
+    Plug 'gtags.vim'
+elseif executable("cscope")
+    Plug 'brookhong/cscope.vim'
+else
+    Plug 'ludovicchabant/vim-gutentags'
+endif
+
+" NeoVim specific plugins
+if has('nvim')
+    Plug 'benekastah/neomake'
+    Plug 'Shougo/deoplete.nvim'
+endif
+
+call plug#end()

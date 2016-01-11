@@ -1,21 +1,22 @@
-let load_vundle_config = "source " . resolve(expand('~/.vimrc')) . '_vundle'
+let load_vimplug_config = "source " . resolve(expand('~/.vimrc')) . '_vimplug'
 let load_common_config = "source " . resolve(expand('~/.vimrc')) . '_common'
+let load_plugin_config = "source " . resolve(expand('~/.vimrc')) . '_plugin'
 
-" Look for Vundle installation
-if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
-    exec load_vundle_config
+" Look for vim-plug installation
+if filereadable(expand('~/.vim/autoload/plug.vim'))
+    exec load_plugin_config
+    exec load_common_config
 else
-
     " Setup basic configuration
     exec load_common_config
     colorscheme elflord
 
     " Create function to install Vundle and plugins
-    function! VundleInstall()
-        echo "Installing Vundle..."
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        exec load_vundle_config
+    function! VimPlugInstall()
+        echo "Installing Vim-plug..."
+        silent !mkdir -p ~/.vim/autoload
+        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+        exec load_plugin_config
         PluginInstall
         echo "Restart Vim"
     endfunc

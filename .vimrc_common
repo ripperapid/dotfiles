@@ -9,6 +9,7 @@ set t_vb=         " Disable bell in terminal
 set t_ut=         " Fix corrupt background in tmux
 set encoding=utf-8
 set mouse=a
+set cursorline    " Highligt line under cursor
 
 " Popup menu configuration
 highlight PmenuSel guibg=brown
@@ -125,3 +126,26 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Reset colors before exiting (Needed when using screen)
+au VimLeave * !echo -ne "\033[0m"
+
+" Functions
+func! MakeNormal()
+	exec "set makeprg=make"
+endfunc
+func! MakeClean()
+	exec "make clean"
+endfunc
+func! Compile()
+    exec "w"
+    exec "!gcc % -o %<"
+endfunc
+command! Compile call Compile()
+func! SudoWrite()
+    exec "w !sudo tee % > /dev/null"
+endfunc
+func! ToggleMenu()
+    exec "if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif"
+endfunc
+
