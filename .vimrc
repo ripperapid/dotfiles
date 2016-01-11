@@ -1,6 +1,8 @@
-let load_vimplug_config = "source " . resolve(expand('~/.vimrc')) . '_vimplug'
-let load_common_config = "source " . resolve(expand('~/.vimrc')) . '_common'
-let load_plugin_config = "source " . resolve(expand('~/.vimrc')) . '_plugin'
+if has("unix")
+    let load_vimplug_config = "source " . resolve(expand('~/.vimrc')) . '_vimplug'
+    let load_common_config = "source " . resolve(expand('~/.vimrc')) . '_common'
+    let load_plugin_config = "source " . resolve(expand('~/.vimrc')) . '_plugin'
+endif
 
 " Look for vim-plug installation
 if filereadable(expand('~/.vim/autoload/plug.vim'))
