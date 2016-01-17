@@ -1,0 +1,11 @@
+set makeprg=make\ -w\ -j8\ -C\ <path>
+
+if !exists("*MakeThis")
+  func MakeThis()
+    cd <path>
+    Neomake!
+  endfunc
+endif
+
+command! Compile call MakeThis()
+
