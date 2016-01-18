@@ -9,7 +9,9 @@ endif
 if filereadable(expand('~/.vim/autoload/plug.vim'))
     exec load_plugin_config
     exec load_common_config
-    exec load_neovim_config
+    if has("nvim")
+        exec load_neovim_config
+    endif
 else
     " Setup basic configuration
     exec load_common_config
@@ -21,7 +23,9 @@ else
         silent !mkdir -p ~/.vim/autoload
         execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
         exec load_plugin_config
-        exec load_neovim_config
+        if has("nvim")
+            exec load_neovim_config
+        endif
         PluginInstall
         echo "Restart Vim"
     endfunc
