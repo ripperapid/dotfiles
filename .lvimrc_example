@@ -5,7 +5,11 @@ set makeprg=make\ -w\ -j8
 if !exists("*MakeThis")
   func MakeThis()
     exe 'cd ' . g:project_root
-    Neomake!
+    if has('nvim')
+        Neomake!
+    else
+        Make
+    endif
   endfunc
 endif
 
