@@ -41,7 +41,7 @@ let g:tex_flavor='latex'
 
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
-nmap <F8>          :Compile
+nmap <F8>          :Compile<CR>
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
 nmap <leader>b     :CtrlPBuffer<CR>
