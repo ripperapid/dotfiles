@@ -61,7 +61,6 @@ Plug 'terryma/vim-expand-region'
 Plug 'wikitopian/hardmode'
 Plug 'BufOnly.vim'
 "Plug 'c.vim'
-Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'will133/vim-dirdiff'
@@ -74,7 +73,6 @@ Plug 'searchfold.vim'
 
 " OS dependent plugins
 if has("unix")
-    Plug 'osyo-manga/vim-marching'
     Plug 'rking/ag.vim'
 else
     Plug 'runsisi/consolas-font-for-powerline'
@@ -100,8 +98,14 @@ endif
 if has('nvim')
     Plug 'benekastah/neomake'
     Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 else
     Plug 'regedarek/ZoomWin'
+    Plug 'tpope/vim-dispatch'
+    if has('unix')
+        Plug 'osyo-manga/vim-marching'
+    endif
 endif
 
 call plug#end()
