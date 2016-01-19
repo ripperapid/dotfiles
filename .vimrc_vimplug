@@ -64,7 +64,6 @@ Plug 'BufOnly.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
-Plug 'regedarek/ZoomWin'
 Plug 'will133/vim-dirdiff'
 Plug 'kergoth/vim-bitbake'
 Plug 'vcscommand.vim'
@@ -101,6 +100,8 @@ endif
 if has('nvim')
     Plug 'benekastah/neomake'
     Plug 'Shougo/deoplete.nvim'
+else
+    Plug 'regedarek/ZoomWin'
 endif
 
 call plug#end()
