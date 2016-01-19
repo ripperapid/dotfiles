@@ -32,6 +32,10 @@ endif
 
 colorscheme neverland
 
+" Popup menu configuration
+highlight Pmenu ctermbg=234 ctermfg=244
+highlight PmenuSel ctermbg=233 ctermfg=255
+
 "Latex
 let g:tex_flavor='latex'
 
@@ -129,23 +133,29 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
 " NeoComplete
-let g:neocomplete#enable_at_startup = 1
-" TAB-completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ neocomplete#start_manual_complete()
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
-            \ <SID>check_back_space() ? "\<S-TAB>" :
-            \ neocomplete#start_manual_complete()
-function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+if !has('nvim')
+    let g:neocomplete#enable_at_startup = 1
+
+    " TAB-completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ neocomplete#start_manual_complete()
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
+                \ <SID>check_back_space() ? "\<S-TAB>" :
+                \ neocomplete#start_manual_complete()
+    function! s:check_back_space() "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
+
+    " Fix <c-y> in insert mode
+    inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
+endif
+
+" NeoSnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
-" Fix <c-y> in insert mode
-inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
 
 " Speed up easytags
 "let g:easytags_syntax_keyword = 'always'

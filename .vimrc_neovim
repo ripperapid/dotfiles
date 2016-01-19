@@ -10,3 +10,11 @@
 :nnoremap <A-j> <C-w>j
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
+
+" Enable DeoComplete at startup
+let g:deoplete#enable_at_startup = 1
+
+" Enable Tab-completion
+inoremap <silent><expr> <Tab>
+\ pumvisible() ? "\<C-n>" :
+\ deoplete#mappings#manual_complete()
