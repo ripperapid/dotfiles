@@ -1,11 +1,12 @@
-set makeprg=make\ -w\ -j8\ -C\ <path>
+let g:project_root=g:localvimrc_script_dir
+
+set makeprg=make\ -w\ -j8
 
 if !exists("*MakeThis")
   func MakeThis()
-    cd <path>
+    exe 'cd ' . g:project_root
     Neomake!
   endfunc
 endif
 
 command! Compile call MakeThis()
-
