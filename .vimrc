@@ -7,8 +7,8 @@ endif
 
 " Look for vim-plug installation
 if filereadable(expand('~/.vim/autoload/plug.vim'))
-    exec load_plugin_config
     exec load_common_config
+    exec load_plugin_config
     if has("nvim")
         exec load_neovim_config
     endif
