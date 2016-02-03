@@ -133,7 +133,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
 " NeoComplete
-if !has('nvim')
+if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     let g:neocomplete#enable_at_startup = 1
 
     " TAB-completion.

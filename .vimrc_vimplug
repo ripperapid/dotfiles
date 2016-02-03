@@ -73,6 +73,7 @@ Plug 'searchfold.vim'
 Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'AndrewRadev/linediff.vim'
+Plug 'Shougo/vinarise.vim'
 
 " OS dependent plugins
 if has("unix")
@@ -103,6 +104,7 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
+    Plug 'zchee/deoplete-jedi'
 else
     Plug 'regedarek/ZoomWin'
     Plug 'tpope/vim-dispatch'
