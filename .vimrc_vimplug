@@ -8,7 +8,7 @@ endif
 Plug 'kien/rainbow_parentheses.vim'
 "Plug 'tpope/vim-unimpaired'
 "Plug 'jiangmiao/auto-pairs'
-Plug 'amirh/HTML-AutoCloseTag'
+Plug 'amirh/HTML-AutoCloseTag', {'for': 'html'}
 Plug 'embear/vim-localvimrc'
 Plug 'matchit.zip'
 Plug 'Valloric/MatchTagAlways'
@@ -28,7 +28,7 @@ Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'flazz/vim-colorschemes'
 "Plug 'xolox/vim-colorscheme-switcher'
 Plug 'gregsexton/VimCalc'
-Plug 'jaredly/vim-debug'
+Plug 'jaredly/vim-debug', {'for': 'python'}
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
@@ -39,7 +39,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/gtk-vim-syntax'
+Plug 'vim-scripts/gtk-vim-syntax', {'for': 'c'}
 Plug 'xolox/vim-misc'
 Plug 'yggdroot/indentline'
 "Plug 'wesleyche/SrcExpl'
