@@ -64,7 +64,7 @@ Plug 'BufOnly.vim'
 Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'kergoth/vim-bitbake'
+Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 Plug 'vcscommand.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tracwiki'
