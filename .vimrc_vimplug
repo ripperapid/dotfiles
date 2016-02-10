@@ -6,9 +6,7 @@ else
 endif
 
 Plug 'kien/rainbow_parentheses.vim'
-"Plug 'tpope/vim-unimpaired'
-"Plug 'jiangmiao/auto-pairs'
-Plug 'amirh/HTML-AutoCloseTag', {'for': 'html'}
+Plug 'alvan/vim-closetag'
 Plug 'embear/vim-localvimrc'
 Plug 'matchit.zip'
 Plug 'Valloric/MatchTagAlways'
@@ -112,5 +110,8 @@ else
         Plug 'osyo-manga/vim-marching'
     endif
 endif
+
+" Enabled closetag for HTML
+let g:closetag_filenames = "*.htm,*.html,*.xhtml,*.phtml"
 
 call plug#end()
