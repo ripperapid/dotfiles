@@ -21,7 +21,7 @@ Plug 'Lokaltog/powerline-fonts'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'bufkill.vim'
-Plug 'bling/vim-airline', {'tag': '3f927b587d07b145c1920bfd447bf052e2bfc42f'}
+Plug 'bling/vim-airline'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'flazz/vim-colorschemes'
 "Plug 'xolox/vim-colorscheme-switcher'
@@ -62,7 +62,7 @@ Plug 'BufOnly.vim'
 Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'kergoth/vim-bitbake'
+Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 Plug 'vcscommand.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tracwiki'

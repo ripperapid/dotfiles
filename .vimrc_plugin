@@ -93,6 +93,9 @@ endif
 
 " Treat Qt stylesheets as CSS files
 au BufNewFile,BufRead *.qss set filetype=css
+"
+" Use bitbake highlighting for OE-lite recipes
+au BufNewFile,BufRead *.oe set filetype=bitbake
 
 " Autochdir confuses plugins. This is a workaround
 au BufEnter * silent! lcd %:p:h
