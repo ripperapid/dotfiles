@@ -16,8 +16,13 @@ else
     " Create function to install Vundle and plugins
     function! VimPlugInstall()
         echo "Installing Vim-plug..."
-        silent !mkdir -p ~/.vim/autoload
-        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+        if has("unix")
+            silent !mkdir -p ~/.vim/autoload
+            execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+        else
+            silen call mkdir($USERPROFILE . "\\.vim\\autoload", "p")
+            execute '!curl -fLo ' . $USERPROFILE . '\.vim\autoload\plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+        endif
         exec load_plugin_config
         PluginInstall
         echo "Restart Vim"
