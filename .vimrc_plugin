@@ -32,6 +32,10 @@ endif
 
 colorscheme neverland
 
+" Popup menu configuration
+highlight Pmenu ctermbg=237 ctermfg=248
+highlight PmenuSel ctermbg=243 ctermfg=226
+
 "Latex
 let g:tex_flavor='latex'
 
@@ -41,7 +45,7 @@ let g:tex_flavor='latex'
 
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
-nmap <F8>          :Compile
+nmap <F8>          :Compile<CR>
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
 nmap <leader>b     :CtrlPBuffer<CR>
@@ -89,6 +93,9 @@ endif
 
 " Treat Qt stylesheets as CSS files
 au BufNewFile,BufRead *.qss set filetype=css
+"
+" Use bitbake highlighting for OE-lite recipes
+au BufNewFile,BufRead *.oe set filetype=bitbake
 
 " Autochdir confuses plugins. This is a workaround
 au BufEnter * silent! lcd %:p:h
@@ -129,23 +136,29 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
 " NeoComplete
-let g:neocomplete#enable_at_startup = 1
-" TAB-completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ neocomplete#start_manual_complete()
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
-            \ <SID>check_back_space() ? "\<S-TAB>" :
-            \ neocomplete#start_manual_complete()
-function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
+    let g:neocomplete#enable_at_startup = 1
+
+    " TAB-completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ neocomplete#start_manual_complete()
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
+                \ <SID>check_back_space() ? "\<S-TAB>" :
+                \ neocomplete#start_manual_complete()
+    function! s:check_back_space() "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
+
+    " Fix <c-y> in insert mode
+    inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
+endif
+
+" NeoSnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
-" Fix <c-y> in insert mode
-inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
 
 " Speed up easytags
 "let g:easytags_syntax_keyword = 'always'

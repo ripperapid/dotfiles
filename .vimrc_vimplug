@@ -8,7 +8,7 @@ endif
 Plug 'kien/rainbow_parentheses.vim'
 "Plug 'tpope/vim-unimpaired'
 "Plug 'jiangmiao/auto-pairs'
-Plug 'amirh/HTML-AutoCloseTag'
+Plug 'amirh/HTML-AutoCloseTag', {'for': 'html'}
 Plug 'embear/vim-localvimrc'
 Plug 'matchit.zip'
 Plug 'Valloric/MatchTagAlways'
@@ -28,7 +28,7 @@ Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'flazz/vim-colorschemes'
 "Plug 'xolox/vim-colorscheme-switcher'
 Plug 'gregsexton/VimCalc'
-Plug 'jaredly/vim-debug'
+Plug 'jaredly/vim-debug', {'for': 'python'}
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
@@ -39,7 +39,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/gtk-vim-syntax'
+Plug 'vim-scripts/gtk-vim-syntax', {'for': 'c'}
 Plug 'xolox/vim-misc'
 Plug 'yggdroot/indentline'
 "Plug 'wesleyche/SrcExpl'
@@ -61,21 +61,22 @@ Plug 'terryma/vim-expand-region'
 Plug 'wikitopian/hardmode'
 Plug 'BufOnly.vim'
 "Plug 'c.vim'
-Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
-Plug 'regedarek/ZoomWin'
 Plug 'will133/vim-dirdiff'
-Plug 'kergoth/vim-bitbake'
+Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 Plug 'vcscommand.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tracwiki'
 Plug 'log.vim'
 Plug 'searchfold.vim'
+Plug 'guns/xterm-color-table.vim'
+Plug 'chrisbra/vim-diff-enhanced'
+Plug 'AndrewRadev/linediff.vim'
+Plug 'Shougo/vinarise.vim'
 
 " OS dependent plugins
 if has("unix")
-    Plug 'osyo-manga/vim-marching'
     Plug 'rking/ag.vim'
 else
     Plug 'runsisi/consolas-font-for-powerline'
@@ -101,6 +102,15 @@ endif
 if has('nvim')
     Plug 'benekastah/neomake'
     Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+    Plug 'zchee/deoplete-jedi'
+else
+    Plug 'regedarek/ZoomWin'
+    Plug 'tpope/vim-dispatch'
+    if has('unix')
+        Plug 'osyo-manga/vim-marching'
+    endif
 endif
 
 call plug#end()
