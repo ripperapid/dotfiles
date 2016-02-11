@@ -71,7 +71,7 @@ Plug 'searchfold.vim'
 Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'AndrewRadev/linediff.vim'
-Plug 'Shougo/vinarise.vim'
+Plug 'vim-utils/vim-man'
 
 " OS dependent plugins
 if has("unix")
