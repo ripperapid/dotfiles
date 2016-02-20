@@ -72,6 +72,7 @@ Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'Shougo/vinarise.vim'
+Plug 'vim-utils/vim-man'
 Plug 'peterhoeg/vim-qml'
 
 " OS dependent plugins
