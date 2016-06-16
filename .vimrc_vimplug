@@ -105,6 +105,9 @@ if has('nvim')
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'zchee/deoplete-jedi'
+    if executable('clang')
+        Plug 'zchee/deoplete-clang'
+    endif
 else
     Plug 'regedarek/ZoomWin'
     Plug 'tpope/vim-dispatch'
