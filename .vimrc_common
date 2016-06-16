@@ -127,6 +127,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Show vertical 80 char line for certain filetypes
+au FileType c,cpp setlocal colorcolumn=80
+
 " Reset colors before exiting (Needed when using screen)
 au VimLeave * !echo -ne "\033[0m"
 
