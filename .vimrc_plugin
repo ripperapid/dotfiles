@@ -212,3 +212,6 @@ func! NERDTreeRefresh()
     endif
 endfunc
 au BufEnter *.* call NERDTreeRefresh()
+
+" Signify
+let g:signify_vcs_list = [ 'svn' ]

@@ -74,6 +74,7 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'Shougo/vinarise.vim'
 Plug 'vim-utils/vim-man'
 Plug 'peterhoeg/vim-qml'
+Plug 'metakirby5/codi.vim'
 
 " OS dependent plugins
 if has("unix")
