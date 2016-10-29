@@ -75,6 +75,7 @@ Plug 'Shougo/vinarise.vim'
 Plug 'vim-utils/vim-man'
 Plug 'peterhoeg/vim-qml'
 Plug 'metakirby5/codi.vim'
+Plug 'jreybert/vimagit'
 
 " OS dependent plugins
 if has("unix")
