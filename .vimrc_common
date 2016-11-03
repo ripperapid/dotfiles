@@ -93,8 +93,8 @@ nmap <leader>§     :set rnu! rnu? <cr>
 " Put cursor in a better position after a yank
 vmap y ygv<Esc>
 
-" Exit instert mode with öö
-:imap öö <Esc>
+" Exit instert mode with jk
+:imap jk <Esc>
 
 " Better use for swedish keyboard
 map ö [
@@ -116,10 +116,10 @@ map <leader>gm ]m
 nmap <leader>gt g]
 
 " Window movements
-nmap <C-h>     <C-W>h
-nmap <C-j>     <C-W>j
-nmap <C-k>     <C-W>k
-nmap <C-l>     <C-W>l
+nmap <A-h>     <C-W>h
+nmap <A-j>     <C-W>j
+nmap <A-k>     <C-W>k
+nmap <A-l>     <C-W>l
 
 " Disable arrow keys (habit breaking)
 noremap <Up> <NOP>
