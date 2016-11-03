@@ -133,6 +133,9 @@ au FileType c,cpp setlocal colorcolumn=80
 " Reset colors before exiting (Needed when using screen)
 au VimLeave * !echo -ne "\033[0m"
 
+" Wrap lines in quickfix window
+au FileType qf setlocal wrap linebreak
+
 " Functions
 func! MakeNormal()
 	exec "set makeprg=make"
