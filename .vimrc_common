@@ -111,6 +111,10 @@ map <leader>gP [(
 map <leader>gp ])
 map <leader>gM [m
 map <leader>gm ]m
+map <leader>j }
+map <leader>k {
+map <leader>h (
+map <leader>l )
 
 " Tag movements
 nmap <leader>gt g]
