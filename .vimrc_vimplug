@@ -59,7 +59,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'wikitopian/hardmode'
 Plug 'BufOnly.vim'
 "Plug 'c.vim'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
@@ -76,6 +76,8 @@ Plug 'vim-utils/vim-man'
 Plug 'peterhoeg/vim-qml'
 Plug 'metakirby5/codi.vim'
 Plug 'jreybert/vimagit'
+Plug 'milkypostman/vim-togglelist'
+Plug 'skywind3000/asyncrun.vim'
 
 " OS dependent plugins
 if has("unix")
