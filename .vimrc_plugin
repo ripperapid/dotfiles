@@ -4,12 +4,27 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
+"let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
+"let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
+"let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.maxlinenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
@@ -39,17 +54,22 @@ highlight PmenuSel ctermbg=243 ctermfg=226
 "Latex
 let g:tex_flavor='latex'
 
+" Toggle quickfix
+let g:toggle_list_no_mappings = 1
+
 
 " Key bindings
 " ===========================================================================
 
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
+nmap <F4>         :call ToggleQuickfixList()<CR>
+nmap <F5>         :call ToggleLocationList()<CR>
 nmap <F8>          :Compile<CR>
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
 nmap <leader>b     :CtrlPBuffer<CR>
-nmap <leader>k     :BD<cr>
+nmap <leader>x     :BD<cr>
 nmap <leader>§     :set rnu! rnu? <cr>
 
 " Expand / decrease selection
@@ -66,6 +86,7 @@ nmap ga <Plug>(EasyAlign)
 if executable("gtags")
     nmap <leader>gt :GtagsCursor<CR>]
 elseif executable("cscope")
+    let g:cscope_silent = 1
     " Minimum key mappings
     nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
     nnoremap <leader>l :call ToggleLocationList()<CR>
@@ -159,6 +180,9 @@ endif
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" Neomake check on write
+au BufWritePost *.c,*.h,*.cpp,*.hpp Neomake
 
 " Speed up easytags
 "let g:easytags_syntax_keyword = 'always'
