@@ -82,8 +82,10 @@ nmap <F6>          :bp<CR>
 nmap <F7>          :bn<CR>
 nmap <C-tab>       <ESC> :b#<cr>
 nmap <F4>          :copen<CR>
-nmap <F12>         :nohlsearch<CR>
 nmap <leader><F4>  :cclose<CR>
+nmap <F5>          :lopen<CR>
+nmap <leader><F5>  :lclose<CR>
+nmap <F12>         :nohlsearch<CR>
 nmap <leader><F8>  :make clean
 nmap <leader><tab> :b#<CR>
 nmap <leader>n     :cnext<CR>
