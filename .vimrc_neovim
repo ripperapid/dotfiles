@@ -1,5 +1,6 @@
-" Use double escape to exit terminal mode
+" Use double escape or kj to exit terminal mode
 :tnoremap <Esc><Esc> <C-\><C-n>
+:tnoremap kj <C-\><C-n>
 
 " Easy window switching for terminal mode
 :tnoremap <A-h> <C-\><C-n><C-w>h
@@ -9,6 +10,7 @@
 :nnoremap <A-h> <C-w>h
 :nnoremap <A-j> <C-w>j
 :nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
 :nnoremap <A-l> <C-w>l
 
 " Enable DeoComplete at startup
