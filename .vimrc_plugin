@@ -124,7 +124,7 @@ au BufEnter * silent! lcd %:p:h
 " Markdown syntax
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Disable parenthesis highlighting for python code
+" Disable parenthesis highlighting for some file formats
 au FileType python let g:loaded_matchparen=1
 
 " Always wrap in vimdiff

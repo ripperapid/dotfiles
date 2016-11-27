@@ -13,7 +13,7 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'python_match.vim', {'for': 'python'}
 Plug 'tpope/vim-surround'
 Plug 'ciaranm/detectindent'
-Plug 'a.vim'
+Plug 'a.vim', {'for': ['c','cpp','h','hpp']}
 "Plug 'honza/vim-snippets'
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'lateX'}
 Plug 'xuhdev/vim-latex-live-preview', {'for': 'latex'}
@@ -78,6 +78,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'jreybert/vimagit'
 Plug 'milkypostman/vim-togglelist'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'sjl/gundo.vim'
 
 " OS dependent plugins
 if has("unix")
