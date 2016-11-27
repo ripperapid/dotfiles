@@ -1,0 +1,47 @@
+let g:project_root=g:localvimrc_script_dir
+set expandtab
+
+au BufEnter *.cpp set ts=4 sw=4
+au BufEnter *.hpp set ts=4 sw=4
+
+" Show 80-char line
+set colorcolumn=80
+
+" Don't indent namespace
+set cinoptions+=N-s
+"
+" Indent scope declarations (private, public etc. one space)
+set cinoptions+=g1h1
+
+" Continuation lines
+set cinoptions+=+4
+
+" Constructor etc
+set cinoptions+=i4
+
+" Alternate search path
+let g:alternateSearchPath = 'sfr:./,abs:' . g:project_root . '/include'
+
+let g:neomake_cpp_cpplint_maker = {
+            \ 'exe': 'cpplint',
+            \ 'args': ['--filter=-legal/copyright,-build/include_subdir %'],
+            \ 'errorformat': '%f:%l:  %m',
+            \ }
+
+let g:neomake_cpp_enabled_makers=['clangtidy', 'cpplint']
+
+let g:asyncrun_trim=1
+
+if !exists("*MakeThis")
+    func MakeThis()
+        exe 'cd ' . g:project_root . '/build'
+        if has('nvim')
+            AsyncRun make -j2
+        else
+            set makeprg=make\ -j2
+            Make
+        endif
+    endfunc
+endif
+
+command! Compile call MakeThis()
