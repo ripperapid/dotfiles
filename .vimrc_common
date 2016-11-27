@@ -10,6 +10,7 @@ set t_ut=         " Fix corrupt background in tmux
 set encoding=utf-8
 set mouse=a
 set cursorline    " Highligt line under cursor
+set lazyredraw    " Avoid slow scrolling due to cursorline
 
 " Popup menu configuration
 highlight PmenuSel guibg=brown
@@ -80,6 +81,8 @@ map <space><space> <leader><leader>
 " Other mappings
 nmap <F6>          :bp<CR>
 nmap <F7>          :bn<CR>
+nmap <C-h>         :bp<CR>
+nmap <C-l>          :bn<CR>
 nmap <C-tab>       <ESC> :b#<cr>
 nmap <F4>          :copen<CR>
 nmap <leader><F4>  :cclose<CR>
@@ -95,8 +98,8 @@ nmap <leader>§     :set rnu! rnu? <cr>
 " Put cursor in a better position after a yank
 vmap y ygv<Esc>
 
-" Exit instert mode with jk
-:imap jk <Esc>
+" Exit instert mode with kj
+:imap kj <Esc>
 
 " Better use for swedish keyboard
 map ö [
