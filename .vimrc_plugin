@@ -32,9 +32,6 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#buffer_min_count = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Load plugins
-exec load_vimplug_config
-
 " Font configuration
 if has("win32")
     set guifont=Powerline_Consolas:h8:cANSI
@@ -45,8 +42,6 @@ else
     set guifont=Liberation\ Mono\ for\ Powerline\ 11
 endif
 
-colorscheme neverland
-
 " Popup menu configuration
 highlight Pmenu ctermbg=237 ctermfg=248
 highlight PmenuSel ctermbg=243 ctermfg=226
@@ -55,16 +50,15 @@ highlight PmenuSel ctermbg=243 ctermfg=226
 let g:tex_flavor='latex'
 
 " Toggle quickfix
-let g:toggle_list_no_mappings = 1
-
+let g:lt_location_list_toggle_map = '<F4>'
+let g:lt_quickfix_list_toggle_map = '<F5>'
+let g:lt_height = 15
 
 " Key bindings
 " ===========================================================================
 
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
-nmap <F4>         :call ToggleQuickfixList()<CR>
-nmap <F5>         :call ToggleLocationList()<CR>
 nmap <F8>          :Compile<CR>
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
@@ -244,10 +238,16 @@ let g:signify_vcs_list = [ 'svn' ]
 func MakeThis()
     exe 'cd ' . g:make_this_path
     if has('nvim')
-        exec "AsyncRun " . g:make_this_cmd 
+        exec "AsyncRun " . g:make_this_cmd
     else
         set makeprg=g:make_this_cmd
         Make
     endif
 endfunc
 command! Compile call MakeThis()
+
+" Load plugins
+exec load_vimplug_config
+
+colorscheme neverland
+

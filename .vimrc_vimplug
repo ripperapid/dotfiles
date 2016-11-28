@@ -76,7 +76,7 @@ Plug 'vim-utils/vim-man'
 Plug 'peterhoeg/vim-qml'
 Plug 'metakirby5/codi.vim'
 Plug 'jreybert/vimagit'
-Plug 'milkypostman/vim-togglelist'
+Plug 'valloric/listtoggle'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'sjl/gundo.vim'
 
