@@ -1,8 +1,6 @@
 let g:project_root=g:localvimrc_script_dir
 set expandtab
-
-au BufEnter *.cpp set ts=4 sw=4
-au BufEnter *.hpp set ts=4 sw=4
+ts=4 sw=4
 
 " Show 80-char line
 set colorcolumn=80
@@ -32,16 +30,5 @@ let g:neomake_cpp_enabled_makers=['clangtidy', 'cpplint']
 
 let g:asyncrun_trim=1
 
-if !exists("*MakeThis")
-    func MakeThis()
-        exe 'cd ' . g:project_root . '/build'
-        if has('nvim')
-            AsyncRun make -j2
-        else
-            set makeprg=make\ -j2
-            Make
-        endif
-    endfunc
-endif
-
-command! Compile call MakeThis()
+let g:make_this_path=g:project_root . '/build'
+let g:make_this_cmd='make -j2'

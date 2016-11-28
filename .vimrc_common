@@ -156,7 +156,6 @@ func! Compile()
     exec "w"
     exec "!gcc % -o %<"
 endfunc
-command! Compile call Compile()
 func! SudoWrite()
     exec "w !sudo tee % > /dev/null"
 endfunc

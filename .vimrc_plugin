@@ -239,3 +239,15 @@ au BufEnter *.* call NERDTreeRefresh()
 
 " Signify
 let g:signify_vcs_list = [ 'svn' ]
+
+" Custom Async compilation
+func MakeThis()
+    exe 'cd ' . g:make_this_path
+    if has('nvim')
+        exec "AsyncRun " . g:make_this_cmd 
+    else
+        set makeprg=g:make_this_cmd
+        Make
+    endif
+endfunc
+command! Compile call MakeThis()
