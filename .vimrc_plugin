@@ -236,6 +236,7 @@ let g:signify_vcs_list = [ 'svn' ]
 
 " Custom Async compilation
 func MakeThis()
+    copen 15
     exe 'cd ' . g:make_this_path
     if has('nvim')
         exec "AsyncRun " . g:make_this_cmd
