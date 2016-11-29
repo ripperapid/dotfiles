@@ -143,7 +143,7 @@ au FileType c,cpp setlocal colorcolumn=80
 au VimLeave * !echo -ne "\033[0m"
 
 " Wrap lines in quickfix window
-au FileType qf setlocal wrap linebreak
+au FileType qf setlocal wrap linebreak nonumber colorcolumn=
 
 " Functions
 func! MakeNormal()
