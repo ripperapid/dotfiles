@@ -238,11 +238,11 @@ let g:signify_vcs_list = [ 'svn' ]
 func MakeThis()
     copen 15
     exe 'cd ' . g:make_this_path
-    if has('nvim')
-        exec "AsyncRun " . g:make_this_cmd
+    if has('nvim') && g:make_this_async == 1
+       exec "AsyncRun " . g:make_this_cmd
     else
-        set makeprg=g:make_this_cmd
-        Make
+       let &makeprg=g:make_this_cmd
+       make
     endif
 endfunc
 command! Compile call MakeThis()
