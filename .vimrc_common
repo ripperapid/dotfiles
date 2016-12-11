@@ -29,7 +29,7 @@ set smartindent
 set cindent
 
 "Tabs
-set ignorecase
+set noignorecase
 set hidden
 set tabstop=4
 set ffs=unix,dos,mac
