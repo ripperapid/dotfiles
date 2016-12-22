@@ -9,7 +9,7 @@ set colorcolumn=80
 set cinoptions+=N-s
 "
 " Indent scope declarations (private, public etc. one space)
-set cinoptions+=g1h1
+set cinoptions+=g1h3
 
 " Continuation lines
 set cinoptions+=+4
