@@ -27,6 +27,7 @@ filetype plugin on
 set autoindent
 set smartindent
 set cindent
+set cino=(0
 
 "Tabs
 set ignorecase

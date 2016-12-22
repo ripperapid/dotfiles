@@ -17,6 +17,9 @@ set cinoptions+=+4
 " Constructor etc
 set cinoptions+=i4
 
+" Indent function parameters correctly
+set cino=(0
+
 " Alternate search path
 let g:alternateSearchPath = 'sfr:./,abs:' . g:project_root . '/include'
 
