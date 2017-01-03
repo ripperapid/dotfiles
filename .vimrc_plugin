@@ -231,6 +231,9 @@ func! NERDTreeRefresh()
 endfunc
 au BufEnter *.* call NERDTreeRefresh()
 
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+
 " Signify
 let g:signify_vcs_list = [ 'svn' ]
 
