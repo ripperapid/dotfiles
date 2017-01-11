@@ -79,6 +79,8 @@ Plug 'jreybert/vimagit'
 Plug 'valloric/listtoggle'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'sjl/gundo.vim'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'artnez/vim-wipeout'
 
 " OS dependent plugins
 if has("unix")

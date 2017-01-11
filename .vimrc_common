@@ -83,8 +83,7 @@ map <space><space> <leader><leader>
 nmap <F6>          :bp<CR>
 nmap <F7>          :bn<CR>
 nmap <C-h>         :bp<CR>
-nmap <C-l>          :bn<CR>
-nmap <C-tab>       <ESC> :b#<cr>
+nmap <C-l>         :bn<CR>
 nmap <F4>          :copen<CR>
 nmap <leader><F4>  :cclose<CR>
 nmap <F5>          :lopen<CR>
