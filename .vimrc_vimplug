@@ -69,7 +69,6 @@ Plug 'tracwiki'
 Plug 'log.vim'
 Plug 'searchfold.vim'
 Plug 'guns/xterm-color-table.vim'
-Plug 'chrisbra/vim-diff-enhanced'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'Shougo/vinarise.vim'
 Plug 'vim-utils/vim-man'
@@ -94,6 +93,11 @@ if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
     Plug 'Shougo/neocomplete.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
+endif
+
+" Check async capabilities
+if has('nvim') || v:version > 800
+    Plug 'chrisbra/vim-diff-enhanced'
 endif
 
 " Tag plugins
