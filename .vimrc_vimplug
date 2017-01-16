@@ -80,6 +80,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'sjl/gundo.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'artnez/vim-wipeout'
+Plug 'osyo-manga/vim-over'
+Plug 'francoiscabrol/ranger.vim'
 
 " OS dependent plugins
 if has("unix")
@@ -116,6 +118,7 @@ if has('nvim')
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'zchee/deoplete-jedi'
+    Plug 'rbgrouleff/bclose.vim'
     if executable('clang')
         Plug 'zchee/deoplete-clang'
     endif
