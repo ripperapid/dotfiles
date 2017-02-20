@@ -39,7 +39,7 @@ else
     "set guifont=Monospace\ 9
     "set guifont=Consolas\ 8
     "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-    set guifont=Liberation\ Mono\ for\ Powerline\ 11
+    set guifont=Liberation\ Mono\ for\ Powerline\ 21
 endif
 
 " Popup menu configuration
@@ -60,6 +60,7 @@ let g:lt_height = 15
 nmap <F2>          :CtrlPMRUFiles<CR>
 nmap <F3>          :NERDTreeToggle<CR>
 nmap <F8>          :Compile<CR>
+nmap <F10>         :call VimCommanderToggle()<CR>
 nmap <leader><F2>  :CtrlPMixed<CR>
 nmap <leader><F3>  :TagbarToggle<CR>
 nmap <leader>b     :CtrlPBuffer<CR>
@@ -125,8 +126,11 @@ au FileType python let g:loaded_matchparen=1
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 
-" Plugin configurations 
+" Plugin configurations
 " ===========================================================================
+
+" Clang format
+nmap <tab> :.ClangFormat<CR>
 
 " VCSCommands standard mappings conflicts with NERD-commenter
 let VCSCommandDisableMappings = 1
@@ -254,4 +258,3 @@ command! Compile call MakeThis()
 exec load_vimplug_config
 
 colorscheme neverland
-

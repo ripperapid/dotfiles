@@ -81,7 +81,9 @@ Plug 'sjl/gundo.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'artnez/vim-wipeout'
 Plug 'osyo-manga/vim-over'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'lpenz/vimcommander'
+Plug 'alepez/vim-gtest'
+Plug 'rhysd/vim-clang-format'
 
 " OS dependent plugins
 if has("unix")
