@@ -125,7 +125,7 @@ au FileType python let g:loaded_matchparen=1
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 
-" Plugin configurations 
+" Plugin configurations
 " ===========================================================================
 
 " VCSCommands standard mappings conflicts with NERD-commenter
@@ -150,30 +150,19 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
-" NeoComplete
-if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
-    let g:neocomplete#enable_at_startup = 1
-
-    " TAB-completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
-                \ neocomplete#start_manual_complete()
-    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" :
-                \ <SID>check_back_space() ? "\<S-TAB>" :
-                \ neocomplete#start_manual_complete()
-    function! s:check_back_space() "{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
-
-    " Fix <c-y> in insert mode
-    inoremap <c-y> <c-o>:NeoCompleteLock<CR><c-y><c-o>:NeoCompleteUnlock<CR>
+" Tab completion
+if has('nvim')
+    let g:deoplete#sources#clang#libclang_path = "/usr/lib/x86_64-linux-gnu/libclang.so"
+    let g:deoplete#sources#clang#clang_header = "/usr/lib/clang"
+    let g:deoplete#enable_at_startup = 1
+    inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" :
+    \ deoplete#mappings#manual_complete()
+else
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 endif
-
-" NeoSnippet
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Neomake check on write
 au BufWritePost *.c,*.h,*.cpp,*.hpp Neomake

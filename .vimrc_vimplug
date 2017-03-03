@@ -88,13 +88,6 @@ else
     Plug 'runsisi/consolas-font-for-powerline'
 endif
 
-" Check NeoComplete dependencies
-if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
-    Plug 'Shougo/neocomplete.vim'
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
-endif
-
 " Check async capabilities
 if has('nvim') || v:version > 800
     Plug 'chrisbra/vim-diff-enhanced'
@@ -120,6 +113,7 @@ if has('nvim')
         Plug 'zchee/deoplete-clang'
     endif
 else
+    Plug 'maralla/completor.vim'
     Plug 'regedarek/ZoomWin'
     Plug 'tpope/vim-dispatch'
     if has('unix')
