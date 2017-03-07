@@ -54,6 +54,7 @@ Plug 'CharTab'
 Plug 'tpope/vim-repeat'
 Plug 'DoxygenToolkit.vim'
 "Plug 'severin-lemaignan/vim-minimap'
+"Plug 'koron/minimap-vim'
 Plug 'ap/vim-css-color'
 Plug 'terryma/vim-expand-region'
 Plug 'wikitopian/hardmode'
@@ -84,6 +85,7 @@ Plug 'osyo-manga/vim-over'
 Plug 'lpenz/vimcommander'
 Plug 'alepez/vim-gtest'
 Plug 'rhysd/vim-clang-format'
+Plug 'kien/tabman.vim'
 
 " OS dependent plugins
 if has("unix")
@@ -108,7 +110,7 @@ endif
 
 " NeoVim specific plugins
 if has('nvim')
-    Plug 'benekastah/neomake'
+    " Plug 'benekastah/neomake'
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
