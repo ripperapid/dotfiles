@@ -180,7 +180,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Neomake check on write
-au BufWritePost *.c,*.h,*.cpp,*.hpp Neomake
+" au BufWritePost *.c,*.h,*.cpp,*.hpp Neomake
 
 " Speed up easytags
 "let g:easytags_syntax_keyword = 'always'

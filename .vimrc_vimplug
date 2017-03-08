@@ -102,6 +102,7 @@ endif
 " Check async capabilities
 if has('nvim') || v:version > 800
     Plug 'chrisbra/vim-diff-enhanced'
+    Plug 'w0rp/ale'
 endif
 
 " Tag plugins
@@ -115,7 +116,7 @@ endif
 
 " NeoVim specific plugins
 if has('nvim')
-    Plug 'benekastah/neomake'
+    " Plug 'benekastah/neomake'
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
