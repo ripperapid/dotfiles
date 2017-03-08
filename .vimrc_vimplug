@@ -54,6 +54,7 @@ Plug 'CharTab'
 Plug 'tpope/vim-repeat'
 Plug 'DoxygenToolkit.vim'
 "Plug 'severin-lemaignan/vim-minimap'
+"Plug 'koron/minimap-vim'
 Plug 'ap/vim-css-color'
 Plug 'terryma/vim-expand-region'
 Plug 'wikitopian/hardmode'
@@ -84,19 +85,13 @@ Plug 'osyo-manga/vim-over'
 Plug 'lpenz/vimcommander'
 Plug 'alepez/vim-gtest'
 Plug 'rhysd/vim-clang-format'
+Plug 'kien/tabman.vim'
 
 " OS dependent plugins
 if has("unix")
     Plug 'rking/ag.vim'
 else
     Plug 'runsisi/consolas-font-for-powerline'
-endif
-
-" Check NeoComplete dependencies
-if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
-    Plug 'Shougo/neocomplete.vim'
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
 endif
 
 " Check async capabilities
@@ -126,6 +121,7 @@ if has('nvim')
         Plug 'zchee/deoplete-clang'
     endif
 else
+    Plug 'maralla/completor.vim'
     Plug 'regedarek/ZoomWin'
     Plug 'tpope/vim-dispatch'
     if has('unix')

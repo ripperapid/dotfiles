@@ -12,13 +12,3 @@
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
 :nnoremap <A-l> <C-w>l
-
-" Enable DeoComplete at startup
-let g:deoplete#sources#clang#libclang_path = "/usr/lib/x86_64-linux-gnu/libclang.so"
-let g:deoplete#sources#clang#clang_header = "/usr/lib/clang"
-let g:deoplete#enable_at_startup = 1
-
-" Enable Tab-completion
-inoremap <silent><expr> <Tab>
-\ pumvisible() ? "\<C-n>" :
-\ deoplete#mappings#manual_complete()
