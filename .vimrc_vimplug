@@ -96,7 +96,7 @@ else
 endif
 
 " Check async capabilities
-if has('nvim') || v:version > 800
+if has('nvim') || v:version >= 800
     Plug 'chrisbra/vim-diff-enhanced'
     Plug 'w0rp/ale'
 endif
