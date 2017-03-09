@@ -22,6 +22,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'bufkill.vim'
 Plug 'bling/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'flazz/vim-colorschemes'
 "Plug 'xolox/vim-colorscheme-switcher'
