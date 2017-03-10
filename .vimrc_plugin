@@ -44,10 +44,6 @@ else
     set guifont=Liberation\ Mono\ for\ Powerline\ 21
 endif
 
-" Popup menu configuration
-highlight Pmenu ctermbg=237 ctermfg=248
-highlight PmenuSel ctermbg=243 ctermfg=226
-
 "Latex
 let g:tex_flavor='latex'
 
@@ -248,4 +244,10 @@ command! Compile call MakeThis()
 " Load plugins
 exec load_vimplug_config
 
+" Color scheme
 colorscheme neverland
+
+" Popup menu configuration
+highlight Pmenu ctermbg=237 ctermfg=248
+highlight PmenuSel ctermbg=243 ctermfg=226
+
