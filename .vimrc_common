@@ -6,11 +6,15 @@ set t_Co=256      " Enable 256-color mode
 set guioptions=i  " Use vim icon in gui
 set visualbell    " Disable bell in gui
 set t_vb=         " Disable bell in terminal
-set t_ut=         " Fix corrupt background in tmux
 set encoding=utf-8
 set mouse=a
 set cursorline    " Highligt line under cursor
-set lazyredraw    " Avoid slow scrolling due to cursorline
+"set lazyredraw    " Avoid slow scrolling due to cursorline
+
+" Fix corrupt background in tmux
+if &term =~ '256color'
+    set t_ut=
+endif
 
 " Popup menu configuration
 highlight PmenuSel guibg=brown

@@ -82,10 +82,6 @@ else
     set guifont=Liberation\ Mono\ for\ Powerline\ 21
 endif
 
-" Popup menu configuration
-highlight Pmenu ctermbg=237 ctermfg=248
-highlight PmenuSel ctermbg=243 ctermfg=226
-
 "Latex
 let g:tex_flavor='latex'
 
@@ -294,4 +290,10 @@ let g:airline_section_z = '%p%%'
 call airline#parts#define_minwidth('filetype', 150)
 call airline#parts#define_minwidth('branch', 150)
 
+" Color scheme
 colorscheme neverland
+
+" Popup menu configuration
+highlight Pmenu ctermbg=237 ctermfg=248
+highlight PmenuSel ctermbg=243 ctermfg=226
+
